@@ -8,6 +8,6 @@
   var gems = [
     { name: 'Pokeball', price: 2.95 },
     { name: 'Great Ball', price: 3.95 },
-    { name: 'Ultra Ball', price: 5.95 }
+    { name: 'Ultra Ball', price: 6 }
   ];
 })();
