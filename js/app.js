@@ -5,6 +5,18 @@
     this.products = gems;
   });
 
+  app.controller('TabController', function(){
+    this.tab = 1;
+    
+    this.setTab = function(setTab){
+      this.tab = setTab;
+    };
+    
+    this.isSet = function(isSet){
+      return this.tab === isSet;
+    };
+  });
+
   var gems = [{
       name: 'Pokeball',
       description: "A Poke Ball with a 1x Catch Rate.",
