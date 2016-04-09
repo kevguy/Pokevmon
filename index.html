@@ -44,14 +44,43 @@
           <blockquote>Shine: {{product.shine}}</blockquote>
         </div>
         <div ng-show="tab.isSet(3)">
-          <h4>Reviews</h4>
-          <li ng-repeat="review in product.reviews">
-            <blockquote>
-              <strong>{{review.stars}} Stars</strong>
-              {{review.body}}
-              <cite class="clearfix">{{review.author}}</cite>
-            </blockquote>
-          </li>
+          <ul>
+            <h4>Reviews</h4>
+	          <li ng-repeat="review in product.reviews">
+	            <blockquote>
+	              <strong>{{review.stars}} Stars</strong>
+	              {{review.body}}
+	              <cite class="clearfix">-{{review.author}}-</cite>
+	            </blockquote>
+	          </li>
+          </ul>
+
+          <!--  Review Form -->
+            <form name="reviewForm">
+              <!--  Live Preview -->
+              <blockquote>
+                <strong> Stars</strong>
+                
+                <cite class="clearfix">-</cite>
+              </blockquote>
+
+              <!--  Review Form -->
+              <h4>Submit a Review</h4>
+              <fieldset class="form-group">
+                <select class="form-control" ng-options="stars for stars in [5,4,3,2,1]"  title="Stars">
+                  <option value="">Rate the Product</option>
+                </select>
+              </fieldset>
+              <fieldset class="form-group">
+                <textarea class="form-control" placeholder="Write a short review of the product..." title="Review"></textarea>
+              </fieldset>
+              <fieldset class="form-group">
+                <input type="email" class="form-control" placeholder="jimmyDean@example.org" title="Email" />
+              </fieldset>
+              <fieldset class="form-group">
+                <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
+              </fieldset>
+            </form>
         </div>
       </section>
     </div>
