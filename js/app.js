@@ -17,6 +17,18 @@
     };
   });
 
+  app.controller('GalleryController', function(){
+    this.current = 0;
+    
+    this.setCurrent = function(para){
+      if (para){
+        this.current = para;
+      } else {
+        this.current = 0;
+      }
+    };
+  });
+
   var gems = [{
       name: 'Pokeball',
       description: "A Poke Ball with a 1x Catch Rate.",
