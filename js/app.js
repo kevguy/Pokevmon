@@ -29,6 +29,16 @@
     };
   });
 
+  app.controller('ReviewController', function(){
+    this.review = {};
+    
+    this.addReview = function(product){
+      product.reviews.push(this.review);
+      this.review = {};
+    };
+    
+  });
+
   var gems = [{
       name: 'Pokeball',
       description: "A Poke Ball with a 1x Catch Rate.",
