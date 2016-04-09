@@ -2,13 +2,12 @@
   var app = angular.module('pokeStore', []);
 
   app.controller('StoreController', function(){
-    this.product = gem;
+    
   });
 
-  var gem = {
-    name: 'Pokeball',
-    price: 110.50,
-    canPurchase: false,
-    soldOut: true
-  };
+  var gems = [
+    { name: 'Pokeball', price: 2.95 },
+    { name: 'Great Ball', price: 3.95 },
+    { name: 'Ultra Ball', price: 5.95 }
+  ];
 })();
