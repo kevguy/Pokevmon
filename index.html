@@ -7,7 +7,7 @@
   </head>
   <body class="list-group" ng-controller="StoreController as store">
     <header>
-      <h1 class="text-center">Freakin Awesome Pokevmon</h1>
+      <h1 class="text-center">Flatlander Crafted Gems</h1>
       <h2 class="text-center">– an Angular store –</h2>
     </header>
     <div class="list-group-item" ng-repeat="product in store.products">
@@ -15,22 +15,24 @@
         {{product.name}}
         <em class="pull-right">{{product.price | currency}}</em>
       </h3>
-      <section ng-show="product.images.length">
+
+      <!-- Image Gallery  -->
+      <div class='gallery' ng-show="product.images.length">
         <img ng-src="{{product.images[0]}}" />
         <ul class="list-inline thumbs">
           <li class="thumbnail" ng-repeat="image in product.images">
             <img ng-src="{{image}}" style="width:64px;height:64px"/>
           </li>
         </ul>
-      </section>
+      </div>
 
       <section class="tab" ng-controller="TabController as tab">
         <ul class="nav nav-pills">
-          <li ng-class="{active: tab.isSet(1)}">
+          <li ng-class="{ active: tab.isSet(1) }">
             <a href ng-click="tab.setTab(1)">Description</a></li>
-          <li ng-class="{active: tab.isSet(2)}">
+          <li ng-class="{ active: tab.isSet(2) }">
             <a href ng-click="tab.setTab(2)">Specs</a></li>
-          <li ng-class="{active: tab.isSet(3)}">
+          <li ng-class="{ active: tab.isSet(3) }">
             <a href ng-click="tab.setTab(3)">Reviews</a></li>
         </ul>
         <div ng-show="tab.isSet(1)">
@@ -43,7 +45,6 @@
         </div>
         <div ng-show="tab.isSet(3)">
           <h4>Reviews</h4>
-          <blockquote></blockquote>
         </div>
       </section>
     </div>
